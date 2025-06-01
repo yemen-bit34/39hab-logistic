@@ -64,6 +64,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="footer-bottom">
+        <p>Since <span>2021</span></p>
         <p>
           &copy; {new Date().getFullYear()} <span className="highlight">7Express</span> Services Sdn Bhd. All rights reserved.
         </p>
