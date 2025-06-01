@@ -1,24 +1,33 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
 
+function handleScroll() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <figure className="footer-logo">
+   <Link to="/">     <figure className="footer-logo">
           <img
             src="../src/assets/newLogo-t.png"
             alt="7Express Sdn Bhd Logo"
             width="150"
             height="auto"
+            loading="lazy"
+            onClick={handleScroll}
           />
         </figure>
-
+</Link >
         <ul className="footer-nav">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Why Us?</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/why">Why Us?</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
        <div className="footer-address">
   <h3>ADDRESS</h3>

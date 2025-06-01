@@ -5,7 +5,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const Contact = () => {
   return (
      <section >   
- <h1 className='wc-title'>Contact</h1>
+ <h1 className='wc-title reveal'>Keep In Touch...</h1>
+ <p style={{color:"black"}}>For Inquiries or Parcel Tracking Contact Us</p>
     <section className="contact">
       <div >
         <FontAwesomeIcon icon={faWhatsapp} className="icon1" />
