@@ -84,7 +84,7 @@ The project uses CSS custom properties for easy theming. Main colors and fonts c
 
 ## 👥 Team
 
-- **Developer**: Shehab Al-Sogri
+- **Developer**: Alshaib
 - **Owner**: Mohammed Alzalab
 
 ## 📄 License
