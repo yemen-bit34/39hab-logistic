@@ -1,7 +1,7 @@
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //  const Header = () => {
-  
+
 //   return (
 //     <header >
 //  <Link to="/">       <figure className="logo">
@@ -20,6 +20,7 @@
 // }
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
+import logoImage from "../assets/newLogo-t.png";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
@@ -34,33 +35,48 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-   function closeMenu() { //closing the menu
-     setIsOpen(false); 
-   }
+  function closeMenu() {
+    //closing the menu
+    setIsOpen(false);
+  }
   return (
     <header className="header">
       <Link to="/">
         <figure className="logo">
-          <img src="../src/assets/newLogo-t.png" alt="7Express Logo" width="150px" />
+          <img src={logoImage} alt="7Express Logo" width="150px" />
         </figure>
       </Link>
 
       {isMobile && (
-        <Hamburger toggled={isOpen} toggle={setIsOpen} size={34} color="black" />
+        <Hamburger
+          toggled={isOpen}
+          toggle={setIsOpen}
+          size={34}
+          color="black"
+        />
       )}
-      
+
       {(isOpen || !isMobile) && (
         <nav>
           <ul className="nav-links">
-            <li onClick={closeMenu}><Link to="/about">About</Link></li>
-            <li onClick={closeMenu}><Link to="/Services">Services</Link></li>
-            <li onClick={closeMenu}><Link to="/why">Why us?</Link></li>
-            <li onClick={closeMenu}><Link to="/contact" className="track">Contact</Link></li>
+            <li onClick={closeMenu}>
+              <Link to="/about">About</Link>
+            </li>
+            <li onClick={closeMenu}>
+              <Link to="/Services">Services</Link>
+            </li>
+            <li onClick={closeMenu}>
+              <Link to="/why">Why us?</Link>
+            </li>
+            <li onClick={closeMenu}>
+              <Link to="/contact" className="track">
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
-      ) }
-    
+      )}
     </header>
   );
 };
- export default Header;
+export default Header;
